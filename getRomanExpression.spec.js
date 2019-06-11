@@ -106,3 +106,6 @@ test("should get roman expresion of 39", () => {
 test("should get roman expresion of 40", () => {
     expect(getRomanExpression(40)).toEqual("XL");
 })
+test("should get roman expresion of 41", () => {
+    expect(getRomanExpression(41)).toEqual("XLI");
+})

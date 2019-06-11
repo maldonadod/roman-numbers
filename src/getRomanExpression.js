@@ -1,6 +1,6 @@
 function getRomanExpression(n) {
-    if (n === 40) {
-        return "XL";
+    if (n >= 40) {
+        return "XL" + getRomanExpression(n - 40);
     }
     if (n >= 10) {
         return "X" + getRomanExpression(n - 10);
