@@ -109,3 +109,30 @@ test("should get roman expresion of 40", () => {
 test("should get roman expresion of 41", () => {
     expect(getRomanExpression(41)).toEqual("XLI");
 })
+test("should get roman expresion of 42", () => {
+    expect(getRomanExpression(42)).toEqual("XLII");
+})
+test("should get roman expresion of 43", () => {
+    expect(getRomanExpression(43)).toEqual("XLIII");
+})
+test("should get roman expresion of 44", () => {
+    expect(getRomanExpression(44)).toEqual("XLIV");
+})
+test("should get roman expresion of 45", () => {
+    expect(getRomanExpression(45)).toEqual("XLV");
+})
+test("should get roman expresion of 46", () => {
+    expect(getRomanExpression(46)).toEqual("XLVI");
+})
+test("should get roman expresion of 47", () => {
+    expect(getRomanExpression(47)).toEqual("XLVII");
+})
+test("should get roman expresion of 48", () => {
+    expect(getRomanExpression(48)).toEqual("XLVIII");
+})
+test("should get roman expresion of 49", () => {
+    expect(getRomanExpression(49)).toEqual("XLIX");
+})
+test("should get roman expresion of 50", () => {
+    expect(getRomanExpression(50)).toEqual("L");
+})
