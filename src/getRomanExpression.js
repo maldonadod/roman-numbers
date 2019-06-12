@@ -17,9 +17,18 @@ function FIRST_IMPL_TDD_getRomanExpression(n) {
     return "I".repeat(n);
 }
 //function refactorized after all test passing.
+const romanCategories = [
+    [50, "L"],
+    [40, "XL"],
+    [10, "X"],
+    [9, "IX"],
+    [5, "V"],
+    [4, "IV"],
+    [1, "I"]
+];
 function getRomanExpression(
     n,
-    categories = [[50, "L"], [40, "XL"], [10, "X"], [9, "IX"], [5, "V"], [4, "IV"], [1, "I"]], 
+    categories = romanCategories, 
     acc = "",
 ) {
     const [categoryIndex, categoryName] = categories[0];
