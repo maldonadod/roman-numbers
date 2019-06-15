@@ -26,25 +26,46 @@ const romanCategories = [
     [4, "IV"],
     [1, "I"]
 ];
-function getRomanExpression(
-    n,
-    categories = romanCategories, 
-    acc = "",
-) {
-    const [categoryIndex, categoryName] = categories[0];
-    return n === 0
-        ? acc
-        : n >= categoryIndex
-            ? getRomanExpression(
-                n - categoryIndex,
-                categories,
-                acc + categoryName,
-            )
-            : getRomanExpression(
-                n,
-                categories.filter(([otherCategory]) => otherCategory !== categoryIndex),
-                acc,
-            )
+
+function greatherEqualThan(a, b) {
+    return a >= b
 }
+function equals(a, b) {
+    return a === b
+}
+const RETURN_CASE = 0;
+const cases = {
+    returnCase(n) {
+        return equals(n, RETURN_CASE)
+    },
+    nextCase(n, categoryIndex) {
+        return greatherEqualThan(n, categoryIndex);
+    },
+};
+
+function generate(cases, providedCatagories) {
+    return function self(
+        n,
+        categories = providedCatagories, 
+        acc = "",
+    ) {
+        const [categoryIndex, categoryName] = categories[0];
+        return cases.returnCase(n)
+            ? acc
+            : cases.nextCase(n, categoryIndex)
+                ? self(
+                    n - categoryIndex,
+                    categories,
+                    acc + categoryName,
+                )
+                : self(
+                    n,
+                    categories.filter(([otherCategory]) => otherCategory !== categoryIndex),
+                    acc,
+                )
+    }
+}
+
+const getRomanExpression = generate(cases, romanCategories);
 
 module.exports = getRomanExpression;
